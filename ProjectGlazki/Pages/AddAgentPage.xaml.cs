@@ -28,7 +28,6 @@ namespace ProjectGlazki.Pages
             InitializeComponent();
             currentAgent = agent ?? new Agent();
             CmbType.ItemsSource = DBcontext.Context.AgentType.ToList();
-            CmbType.SelectedItem = 0;
             DataContext = currentAgent;
         }
 
@@ -45,6 +44,8 @@ namespace ProjectGlazki.Pages
                 builder.AppendLine("Укажите приоритет");
             if (string.IsNullOrWhiteSpace(currentAgent.Logo))
                 currentAgent.Logo = "";
+            if (currentAgent.AgentType == null)
+                builder.AppendLine("Выбирите тип агента");
 
 
             if(builder.Length > 0)
