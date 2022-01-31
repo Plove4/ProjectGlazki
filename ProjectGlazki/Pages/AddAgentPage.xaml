@@ -1,0 +1,66 @@
+﻿<Page x:Class="ProjectGlazki.Pages.AddAgentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectGlazki.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddAgentPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <WrapPanel>
+                <TextBlock Text="Наименование: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding Title}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Тип агента: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <ComboBox Name="CmbType" Text="" Width="150" Height="20"
+                          SelectedItem="{Binding AgentType}" DisplayMemberPath="Title" SelectedValuePath="ID"></ComboBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Адрес: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding Address}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="ИНН: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding INN}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="КРР: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding KPP}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Имя директора: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding DirectorName}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Номер телефона: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding Phone}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Электронная почта: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding Email}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Logo: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding Logo}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Приоритет: " Width="150" Height="25" FontFamily="Century Gothic" Padding="5" Margin="5"></TextBlock>
+                <TextBox Text="{Binding Priority}" Width="150" Height="20"></TextBox>
+            </WrapPanel>
+        </StackPanel>
+        <Grid Grid.Row="1" Background="#FFE9F9">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Name="Save_btn" Click="Save_btn_Click" Height="25" Width="100" Background="#B175EE" Content="Сохранить" FontFamily="Century Gothic" Margin="5 0 70 0"></Button>
+                <Button Name="Cancel_btn" Click="Cancel_btn_Click" Height="25" Width="100" Background="#B175EE" Content="Отмена" FontFamily="Century Gothic" Margin="70 0 5 0"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
